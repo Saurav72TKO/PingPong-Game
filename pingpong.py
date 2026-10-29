@@ -1,6 +1,6 @@
 import pygame, sys
 import random
-from pygame import mixer
+from pygame import mixer #to play music and sound effect
 
 def reset_ball (): #reset the ball after every point
     global ball_vel_x, ball_vel_y
@@ -10,7 +10,7 @@ def reset_ball (): #reset the ball after every point
     ball_vel_y *= random.choice([-1,1])
     
 
-def point_won (winner):
+def point_won (winner): #points music 
     global cpu_points , player_points
     
     if winner == cpu:
@@ -24,7 +24,7 @@ def point_won (winner):
     reset_ball()
     
 
-def animate_ball(): 
+def animate_ball(): #ball movement
     
     global ball_vel_x, ball_vel_y
     
@@ -32,7 +32,7 @@ def animate_ball():
     ball.y += ball_vel_y
         
         
-    if ball.bottom >= HEIGHT or ball.top <= 0:
+    if ball.bottom >= HEIGHT or ball.top <= 0:  #edges / wall 
         ball_vel_y *= -1
         
     if ball.right >= WIDTH:
@@ -58,7 +58,7 @@ def animate_cpu ():
     global  cpu_speed
     cpu.y += cpu_speed
     
-    if ball.centery + random.randint(-85,85)<= cpu.centery:
+    if ball.centery + random.randint(-85,85)<= cpu.centery: #adding error to the cpu position to make it imperfect
         cpu_speed = -6
     if ball.centery + random.randint(-85,85) >= cpu.centery:
         cpu_speed = 6
@@ -87,7 +87,7 @@ mixer.music.load("Deck the Halls Jazz Loop.ogg")
 mixer.music.set_volume(0.25)
 mixer.music.play(-1)  # start playing
 
-# Load - do this ONCE outside loop, not inside loop!
+# game sound effect
 won_sound = mixer.Sound("won.mp3")  
 won_sound.set_volume(0.7)
 lost_sound = mixer.Sound("lost.mp3")  
