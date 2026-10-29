@@ -2,7 +2,7 @@ import pygame, sys
 import random
 from pygame import mixer
 
-def reset_ball ():
+def reset_ball (): #reset the ball after every point
     global ball_vel_x, ball_vel_y
     ball.x = WIDTH/2
     ball.y = random.randint(200,600)
@@ -182,12 +182,3 @@ while True:
             
     pygame.display.update() #update the display
     clock.tick(FRAMERATE)    #frame rate (every computer will have same speed)
-    
-    
-    
-    
-    
-    
-    
-    
-    
