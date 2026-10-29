@@ -44,6 +44,6 @@ Make sure the required audio files are present in the project folder.
 
 This project helped me practise game loops, keyboard events, collision detection, ball movement, score tracking, and playing music and sound effects with Pygame.
 
-## 👨‍💻 Author Saurav 
+## 👨‍💻 Author 
 
-Created as a beginner Python game development project.
+Created by **Saurav** as a beginner Python game development project.
